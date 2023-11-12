@@ -71,7 +71,6 @@
       # "foobar"
     ];
     casks = [
-      "alacritty"
       "kitty"
       "utm"
     ];
