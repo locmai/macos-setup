@@ -1,8 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/6c43a3495a11.tar.gz") {} , ... }:
+
+let
+  # Pinned revisions (try to avoid it unless we have to use a specific version)
+  #
+  # To find the revision of a specific package version:
+  #   - Go to https://search.nixos.org and find the package
+  #   - Click the source button to view the Nix expression
+  #   - Click History and find the commit contains the version
+  # Example: https://github.com/NixOS/nixpkgs/commit/18692f7718b8568f1738a334397db887e27e26ae
+  #
+  terraform_1_2_6 = (import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/18692f7.tar.gz") {});
+in
 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep curl
+
   environment.systemPackages = with pkgs; [
     aria
     bat
@@ -39,6 +52,7 @@
     unzip
     watch
     zoxide
+    terraform_1_2_6.terraform
 
     (pass.withExtensions (ext: with ext; [
       pass-otp
