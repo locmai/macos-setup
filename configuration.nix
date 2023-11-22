@@ -6,6 +6,7 @@
 
   environment.systemPackages = with pkgs; [
     aria
+    azure-cli
     bat
     cargo
     colima

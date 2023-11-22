@@ -18,7 +18,6 @@ in
       programs.home-manager.enable = true;
       home.packages = with pkgs; [
         argocd
-        azure-cli
         istioctl
         sops
       ];
