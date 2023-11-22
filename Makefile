@@ -23,6 +23,7 @@ dotfiles:
 	cd ~ \
 	&& git init \
 	&& git config status.showUntrackedFiles no \
-	&& git remote add origin https://github.com/locmai/dotfiles \
+	&& git remote add origin https://github.com/locmai/dotfiles || true \
 	&& git pull origin master \
+	&& git branch -M master \
 	&& git remote set-url origin git@github.com:locmai/dotfiles
