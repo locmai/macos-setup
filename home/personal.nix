@@ -8,7 +8,6 @@ in
 
   homebrew = {
     casks = [
-      "diffusionbee"
       "firefox"
     ];
   };

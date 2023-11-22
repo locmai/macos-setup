@@ -40,6 +40,9 @@
     unzip
     watch
     zoxide
+    terragrunt
+    tflint
+    yq-go
 
     (pass.withExtensions (ext: with ext; [
       pass-otp
