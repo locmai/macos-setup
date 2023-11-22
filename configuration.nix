@@ -36,7 +36,6 @@
     rbw
     ripgrep
     rust-analyzer
-    tmux
     tree
     unzip
     watch
