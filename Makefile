@@ -18,3 +18,11 @@ build: /nix /run/current-system/sw/bin/darwin-rebuild
 
 update:
 	nix flake update
+
+dotfiles:
+	cd ~ \
+	&& git init \
+	&& git config status.showUntrackedFiles no \
+	&& git remote add origin https://github.com/locmai/dotfiles \
+	&& git pull origin master \
+	&& git remote set-url origin git@github.com:locmai/dotfiles
