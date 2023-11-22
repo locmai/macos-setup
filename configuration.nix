@@ -5,6 +5,7 @@
   # $ nix-env -qaP | grep curl
 
   environment.systemPackages = with pkgs; [
+    act
     aria
     bat
     cargo
