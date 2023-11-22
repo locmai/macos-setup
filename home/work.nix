@@ -18,14 +18,8 @@ in
       programs.home-manager.enable = true;
       home.packages = with pkgs; [
         argocd
-        azure-cli
-        cmctl
         istioctl
-        kubelogin
         sops
-        terragrunt
-        tflint
-        yq-go
       ];
     };
   };

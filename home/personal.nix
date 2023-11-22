@@ -8,7 +8,6 @@ in
 
   homebrew = {
     casks = [
-      "diffusionbee"
       "firefox"
     ];
   };
@@ -24,6 +23,9 @@ in
     users.${username} = { pkgs, lib, ... }: {
       home.stateVersion = "22.11";
       programs.home-manager.enable = true;
+      home.packages = with pkgs; [
+        google-cloud-sdk
+      ];
     };
   };
 }

@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs , ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep curl
+
   environment.systemPackages = with pkgs; [
+    act
     aria
     bat
     cargo
@@ -34,11 +36,13 @@
     rbw
     ripgrep
     rust-analyzer
-    tmux
     tree
     unzip
     watch
     zoxide
+    terragrunt
+    tflint
+    yq-go
 
     (pass.withExtensions (ext: with ext; [
       pass-otp
@@ -68,7 +72,7 @@
       { name = "homebrew/cask"; }
     ];
     brews = [
-      # "foobar"
+      "azure-cli" 
     ];
     casks = [
       "kitty"
