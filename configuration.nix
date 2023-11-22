@@ -6,7 +6,6 @@
 
   environment.systemPackages = with pkgs; [
     aria
-    azure-cli
     bat
     cargo
     colima
@@ -72,7 +71,7 @@
       { name = "homebrew/cask"; }
     ];
     brews = [
-      # "foobar"
+      "azure-cli" 
     ];
     casks = [
       "kitty"
