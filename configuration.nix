@@ -38,6 +38,7 @@
     rust-analyzer
     spotify-tui
     tree
+    thefuck
     unzip
     watch
     zoxide
