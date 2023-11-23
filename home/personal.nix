@@ -25,6 +25,7 @@ in
       programs.home-manager.enable = true;
       home.packages = with pkgs; [
         google-cloud-sdk
+        spotifyd
       ];
     };
   };
