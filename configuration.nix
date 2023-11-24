@@ -19,6 +19,7 @@
     git
     gnupg
     go
+    gopass
     jq
     k9s
     kubectl
