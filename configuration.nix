@@ -41,6 +41,7 @@
     thefuck
     unzip
     watch
+    wget
     zoxide
     terragrunt
     tflint
