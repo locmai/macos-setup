@@ -75,7 +75,8 @@
       { name = "homebrew/cask"; }
     ];
     brews = [
-      "azure-cli" 
+      "azure-cli"
+      "libpq"
     ];
     casks = [
       "kitty"
