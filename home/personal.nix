@@ -9,6 +9,7 @@ in
   homebrew = {
     casks = [
       "firefox"
+      "steam"
     ];
   };
 
