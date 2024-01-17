@@ -19,7 +19,6 @@
     git
     gnupg
     go
-    gopass
     jq
     k9s
     kubectl
@@ -42,6 +41,7 @@
     thefuck
     unzip
     watch
+    wget
     zoxide
     terragrunt
     tflint
@@ -75,7 +75,8 @@
       { name = "homebrew/cask"; }
     ];
     brews = [
-      "azure-cli" 
+      "azure-cli"
+      "libpq"
     ];
     casks = [
       "kitty"
