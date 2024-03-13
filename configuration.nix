@@ -77,6 +77,7 @@
     brews = [
       "azure-cli"
       "libpq"
+      "sqlcmd"
     ];
     casks = [
       "kitty"
