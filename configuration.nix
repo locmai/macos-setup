@@ -32,11 +32,9 @@
     nodePackages.npm
     nodePackages.yarn
     nodejs
-    pinentry
     rbw
     ripgrep
     rust-analyzer
-    spotify-tui
     tree
     thefuck
     unzip
