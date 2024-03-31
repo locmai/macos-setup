@@ -79,7 +79,6 @@
     ];
     casks = [
       "kitty"
-      "utm"
     ];
   };
 
