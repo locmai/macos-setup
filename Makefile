@@ -27,3 +27,6 @@ dotfiles:
 	&& git pull origin master \
 	&& git branch -M master \
 	&& git remote set-url origin git@github.com:locmai/dotfiles
+
+optimize:
+	nix store optimise

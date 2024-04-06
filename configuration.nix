@@ -7,7 +7,6 @@
   environment.systemPackages = with pkgs; [
     act
     aria
-    bat
     cargo
     colima
     curl
@@ -32,17 +31,18 @@
     nodePackages.npm
     nodePackages.yarn
     nodejs
+    opentofu
     rbw
     ripgrep
     rust-analyzer
     tree
-    thefuck
     unzip
     watch
     wget
     zoxide
     terragrunt
     tflint
+    yabai
     yq-go
 
     (pass.withExtensions (ext: with ext; [
@@ -121,7 +121,7 @@
   nix = {
     # configureBuildUsers = true;
     settings = {
-      auto-optimise-store = true;
+      auto-optimise-store = false;
       experimental-features = [
         "nix-command"
         "flakes"
