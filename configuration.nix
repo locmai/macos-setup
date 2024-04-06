@@ -32,6 +32,7 @@
     nodePackages.yarn
     nodejs
     opentofu
+    pinentry_mac
     rbw
     ripgrep
     rust-analyzer
