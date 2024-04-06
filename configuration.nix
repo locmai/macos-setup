@@ -121,7 +121,7 @@
   nix = {
     # configureBuildUsers = true;
     settings = {
-      auto-optimise-store = true;
+      auto-optimise-store = false;
       experimental-features = [
         "nix-command"
         "flakes"
