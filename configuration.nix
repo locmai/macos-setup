@@ -7,7 +7,6 @@
   environment.systemPackages = with pkgs; [
     act
     aria
-    bat
     cargo
     colima
     curl
@@ -32,11 +31,11 @@
     nodePackages.npm
     nodePackages.yarn
     nodejs
+    opentofu
     rbw
     ripgrep
     rust-analyzer
     tree
-    thefuck
     unzip
     watch
     wget
