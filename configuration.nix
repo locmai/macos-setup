@@ -32,7 +32,6 @@
     nodePackages.yarn
     nodejs
     opentofu
-    pinentry_mac
     rbw
     ripgrep
     rust-analyzer
@@ -77,6 +76,7 @@
       "azure-cli"
       "libpq"
       "sqlcmd"
+      "pinentry"
     ];
     casks = [
       "kitty"
