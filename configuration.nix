@@ -42,6 +42,7 @@
     zoxide
     terragrunt
     tflint
+    yabai
     yq-go
 
     (pass.withExtensions (ext: with ext; [
