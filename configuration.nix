@@ -35,6 +35,7 @@
     rbw
     ripgrep
     rust-analyzer
+    skhd
     tree
     unzip
     watch
