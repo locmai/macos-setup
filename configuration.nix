@@ -25,6 +25,7 @@
     kubectx
     kubernetes-helm
     kustomize
+    libbfd
     mosh
     neovim
     nnn
