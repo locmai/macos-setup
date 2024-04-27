@@ -78,6 +78,7 @@
       "libpq"
       "sqlcmd"
       "pinentry"
+      "llvm"
     ];
     casks = [
       "kitty"
