@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     act
     aria
+    bpftools
     cargo
     colima
     curl
