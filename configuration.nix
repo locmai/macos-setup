@@ -34,6 +34,7 @@
     nodePackages.yarn
     nodejs
     opentofu
+    presenterm
     rbw
     ripgrep
     rust-analyzer
