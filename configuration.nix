@@ -7,9 +7,7 @@
   environment.systemPackages = with pkgs; [
     act
     aria
-    bpftools
     cargo
-    colima
     curl
     direnv
     docker
@@ -59,8 +57,7 @@
   ];
 
   fonts = {
-    fontDir.enable = true;
-    fonts = [
+    packages = [
       (pkgs.nerdfonts.override {
         fonts = [
           "FiraCode"
