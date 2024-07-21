@@ -8,7 +8,6 @@
     act
     aria
     cargo
-    colima
     curl
     direnv
     docker
@@ -25,6 +24,7 @@
     kubectx
     kubernetes-helm
     kustomize
+    libbfd
     mosh
     neovim
     nnn
@@ -32,6 +32,7 @@
     nodePackages.yarn
     nodejs
     opentofu
+    presenterm
     rbw
     ripgrep
     rust-analyzer
@@ -56,8 +57,7 @@
   ];
 
   fonts = {
-    fontDir.enable = true;
-    fonts = [
+    packages = [
       (pkgs.nerdfonts.override {
         fonts = [
           "FiraCode"
@@ -78,6 +78,7 @@
       "libpq"
       "sqlcmd"
       "pinentry"
+      "llvm"
     ];
     casks = [
       "kitty"
