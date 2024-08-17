@@ -72,8 +72,6 @@
     onActivation.cleanup = "zap";
     brews = [
       "azure-cli"
-      "libpq"
-      "sqlcmd"
       "pinentry"
       "llvm"
     ];
