@@ -70,9 +70,6 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
-    taps = [
-      { name = "homebrew/cask"; }
-    ];
     brews = [
       "azure-cli"
       "libpq"
