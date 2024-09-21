@@ -80,7 +80,6 @@
     onActivation.cleanup = "zap";
     brews = [
       "azure-cli"
-      "brave-browser"
       "pinentry"
       "llvm"
       "libpq"
