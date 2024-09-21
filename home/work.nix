@@ -6,9 +6,6 @@ in
   # TODO https://github.com/LnL7/nix-darwin/issues/682
 
   users.users.${username}.home = "/Users/${username}";
-  system.activationScripts.extraUserActivation.text = ''
-    sudo pmset -a lowpowermode 1
-  '';
 
   home-manager = {
     useUserPackages = true;
@@ -17,8 +14,6 @@ in
       home.stateVersion = "22.11";
       programs.home-manager.enable = true;
       home.packages = with pkgs; [
-        argocd
-        istioctl
         sops
       ];
     };

@@ -9,14 +9,8 @@ in
   homebrew = {
     casks = [
       "firefox"
-      "steam"
     ];
   };
-
-  # TODO clean up
-  system.activationScripts.extraUserActivation.text = ''
-    sudo pmset -a lowpowermode 1
-  '';
 
   home-manager = {
     useUserPackages = true;
