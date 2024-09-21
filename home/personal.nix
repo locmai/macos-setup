@@ -9,14 +9,8 @@ in
   homebrew = {
     casks = [
       "firefox"
-      "steam"
     ];
   };
-
-  # TODO clean up
-  system.activationScripts.extraUserActivation.text = ''
-    sudo pmset -a lowpowermode 1
-  '';
 
   home-manager = {
     useUserPackages = true;
@@ -25,7 +19,7 @@ in
       home.stateVersion = "22.11";
       programs.home-manager.enable = true;
       home.packages = with pkgs; [
-        google-cloud-sdk
+        (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
       ];
     };
   };

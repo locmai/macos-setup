@@ -7,6 +7,8 @@
   environment.systemPackages = with pkgs; [
     act
     aria
+    argocd
+    azure-cli
     cargo
     curl
     direnv
@@ -17,14 +19,15 @@
     git
     gnupg
     go
+    istioctl
     jq
     k9s
     kubectl
     kubectl-tree
     kubectx
+    kubelogin
     kubernetes-helm
     kustomize
-    libbfd
     mosh
     neovim
     nnn
@@ -35,8 +38,7 @@
     presenterm
     rbw
     ripgrep
-    rust-analyzer
-    skhd
+    tflint
     tree
     unzip
     watch
@@ -44,8 +46,14 @@
     zoxide
     terragrunt
     tflint
-    yabai
     yq-go
+
+    # Language servers
+    gopls
+    lua-language-server
+    nodePackages.typescript-language-server
+    rust-analyzer
+    terraform-ls
 
     (pass.withExtensions (ext: with ext; [
       pass-otp
@@ -72,8 +80,10 @@
     onActivation.cleanup = "zap";
     brews = [
       "azure-cli"
+      "brave-browser"
       "pinentry"
       "llvm"
+      "libpq"
     ];
     casks = [
       "kitty"
