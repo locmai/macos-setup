@@ -64,6 +64,10 @@
     config.homebrew.brewPrefix # TODO https://github.com/LnL7/nix-darwin/issues/596
   ];
 
+  environment.variables = {
+    KUBE_EDITOR = "vim";
+  };
+
   fonts = {
     packages = [
       (pkgs.nerdfonts.override {
