@@ -47,7 +47,9 @@
     terragrunt
     tflint
     yq-go
-
+    yamllint
+    chart-testing
+    skaffold
     # Language servers
     gopls
     lua-language-server
@@ -66,16 +68,6 @@
 
   environment.variables = {
     KUBE_EDITOR = "vim";
-  };
-
-  fonts = {
-    packages = [
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "FiraCode"
-        ];
-      })
-    ];
   };
 
   # Homebrew packages
