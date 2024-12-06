@@ -8,8 +8,6 @@
     act
     aria
     argocd
-    azure-cli
-    cargo
     curl
     direnv
     docker
@@ -31,9 +29,6 @@
     mosh
     neovim
     nnn
-    nodePackages.npm
-    nodePackages.yarn
-    nodejs
     opentofu
     presenterm
     rbw
@@ -45,14 +40,10 @@
     wget
     zoxide
     terragrunt
-    tflint
     yq-go
     yamllint
     chart-testing
     skaffold
-    # Language servers
-    gopls
-    lua-language-server
     nodePackages.typescript-language-server
     rust-analyzer
     terraform-ls
@@ -75,7 +66,6 @@
     enable = true;
     onActivation.cleanup = "zap";
     brews = [
-      "azure-cli"
       "pinentry"
       "llvm"
       "libpq"

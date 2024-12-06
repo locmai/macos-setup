@@ -20,6 +20,8 @@
       "lmac" = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [
+          ./lsp.nix
+          ./cloud.nix
           ./configuration.nix
           home-manager.darwinModules.home-manager
           ./home/personal.nix

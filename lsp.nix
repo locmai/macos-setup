@@ -1,0 +1,32 @@
+{ pkgs , ... }:
+
+{
+  # List packages installed in system profile. To search by name, run:
+  # $ nix-env -qaP | grep curl
+
+  environment.systemPackages = with pkgs; [
+    # Rust
+    rustfmt
+    rust-analyzer
+    # Python
+    ruff
+    uv
+    ruff-lsp
+    # Go
+    gopls
+    gotools
+    
+    # NodeJS
+    nodePackages.npm
+    nodePackages.yarn
+    nodejs
+
+    # Terraform
+    tflint
+    # Nix
+    nixfmt-classic
+    # Lua
+    stylua
+    lua-language-server
+  ];
+}
