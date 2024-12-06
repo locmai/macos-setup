@@ -25,6 +25,7 @@
     tflint
     # Nix
     nixfmt-classic
+    alejandra
     # Lua
     stylua
     lua-language-server
