@@ -4,11 +4,13 @@
 
   environment.systemPackages = with pkgs; [
     # Rust
+    cargo
     rustfmt
     rust-analyzer
     # Python
     ruff
     uv
+    python312Packages.pylsp-rope
     # Go
     gopls
     gotools
