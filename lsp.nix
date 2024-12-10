@@ -1,6 +1,4 @@
-{ pkgs , ... }:
-
-{
+{pkgs, ...}: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep curl
 
@@ -11,11 +9,10 @@
     # Python
     ruff
     uv
-    ruff-lsp
     # Go
     gopls
     gotools
-    
+
     # NodeJS
     nodePackages.npm
     nodePackages.yarn
