@@ -10,6 +10,7 @@
     # Python
     ruff
     uv
+    python312Packages.python-lsp-server
     python312Packages.pylsp-rope
     # Go
     gopls
