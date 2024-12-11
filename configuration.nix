@@ -1,6 +1,8 @@
-{ config, pkgs , ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep curl
 
@@ -48,9 +50,10 @@
     rust-analyzer
     terraform-ls
 
-    (pass.withExtensions (ext: with ext; [
-      pass-otp
-    ]))
+    (pass.withExtensions (ext:
+      with ext; [
+        pass-otp
+      ]))
   ];
 
   environment.systemPath = [
@@ -69,6 +72,7 @@
       "pinentry"
       "llvm"
       "libpq"
+      "tfenv"
     ];
     casks = [
       "kitty"
@@ -141,4 +145,3 @@
 
   nixpkgs.config.allowUnfree = true;
 }
-
