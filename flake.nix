@@ -38,6 +38,7 @@
         modules = [
           ./lsp.nix
           ./cloud.nix
+          ./utilities.nix
           ./configuration.nix
           home-manager.darwinModules.home-manager
           ./home/work.nix
