@@ -29,5 +29,8 @@
     # Lua
     stylua
     lua-language-server
+
+    # .NET
+    dotnet-sdk
   ];
 }
