@@ -23,6 +23,7 @@
 
     # Terraform
     tflint
+    hclfmt
     # Nix
     nixfmt-classic
     alejandra
