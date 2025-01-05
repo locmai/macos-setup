@@ -5,5 +5,6 @@
   environment.systemPackages = with pkgs; [
     azure-cli
     kind
+    lens
   ];
 }
