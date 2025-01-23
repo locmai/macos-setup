@@ -19,6 +19,9 @@
     git
     gnupg
     go
+    imagemagick
+    cairo
+    librsvg
     istioctl
     jq
     k9s
