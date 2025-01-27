@@ -4,7 +4,8 @@
 
   environment.systemPackages = with pkgs; [
     azure-cli
+    azure-storage-azcopy
     kind
-    lens
+    thanos
   ];
 }
