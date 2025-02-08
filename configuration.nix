@@ -38,6 +38,8 @@
     presenterm
     rbw
     ripgrep
+    sslscan
+    step-cli
     tflint
     tree
     unzip
@@ -70,8 +72,8 @@
   # Homebrew packages
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
     brews = [
+      "cookiecutter"
       "pinentry"
       "llvm"
       "libpq"
