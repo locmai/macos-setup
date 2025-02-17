@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     act
     aria
+    terraform-docs
     argocd
     curl
     direnv
