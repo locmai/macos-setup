@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     karabiner-elements
     zizmor
+    keycastr
   ];
 
   nixpkgs.overlays = [

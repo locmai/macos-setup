@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-let
+{...}: let
   username = "locmai";
-in
-{
-  # TODO https://github.com/LnL7/nix-darwin/issues/682
+in {
   users.users.${username}.home = "/Users/${username}";
 
   homebrew = {
@@ -11,11 +8,14 @@ in
       "firefox"
     ];
   };
-
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users.${username} = { pkgs, lib, ... }: {
+    users.${username} = {
+      pkgs,
+      lib,
+      ...
+    }: {
       home.stateVersion = "22.11";
       programs.home-manager.enable = true;
       home.packages = with pkgs; [
@@ -24,4 +24,3 @@ in
     };
   };
 }
-
