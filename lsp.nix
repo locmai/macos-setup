@@ -33,5 +33,8 @@
 
     # .NET
     dotnet-sdk
+
+    # Nix
+    nixd
   ];
 }
