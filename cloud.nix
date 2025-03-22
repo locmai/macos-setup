@@ -7,5 +7,7 @@
     azure-storage-azcopy
     kind
     thanos
+    chart-testing
+    kubernetes-helmPlugins.helm-unittest
   ];
 }

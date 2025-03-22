@@ -6,6 +6,7 @@
     karabiner-elements
     zizmor
     keycastr
+    trivy
   ];
 
   nixpkgs.overlays = [
