@@ -15,6 +15,7 @@ in {
       home.packages = with pkgs; [
         sops
       ];
+      home.enableNixpkgsReleaseCheck = false;
     };
   };
 }
