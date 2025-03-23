@@ -80,9 +80,6 @@
       "libpq"
       "tfenv"
     ];
-    casks = [
-      "kitty"
-    ];
   };
 
   system.defaults = {

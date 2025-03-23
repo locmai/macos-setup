@@ -7,6 +7,9 @@
     zizmor
     keycastr
     trivy
+    yabai
+    skhd
+    kitty
   ];
 
   nixpkgs.overlays = [
