@@ -3,12 +3,9 @@
   # $ nix-env -qaP | grep curl
 
   environment.systemPackages = with pkgs; [
-    karabiner-elements
     zizmor
     keycastr
     trivy
-    yabai
-    skhd
     kitty
   ];
 
