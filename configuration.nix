@@ -52,7 +52,6 @@
     yamllint
     chart-testing
     skaffold
-    nodePackages.typescript-language-server
     rust-analyzer
     terraform-ls
 

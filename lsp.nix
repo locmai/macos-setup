@@ -17,9 +17,10 @@
     gotools
 
     # NodeJS
-    nodePackages.npm
-    nodePackages.yarn
-    nodejs
+    # nodePackages.npm
+    # nodePackages.yarn
+    # nodejs
+    # nodePackages.typescript-language-server
 
     # Terraform
     tflint
