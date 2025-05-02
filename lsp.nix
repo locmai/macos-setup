@@ -13,14 +13,12 @@
     python312Packages.python-lsp-server
     python312Packages.pylsp-rope
     # Go
+    go
     gopls
     gotools
 
     # NodeJS
-    # nodePackages.npm
-    # nodePackages.yarn
-    # nodejs
-    # nodePackages.typescript-language-server
+    nodejs_23
 
     # Terraform
     tflint
@@ -37,5 +35,11 @@
 
     # Nix
     nixd
+
+    # who knows
+    markdown-oxide
+    cmake-language-server
+    jsonfmt
+    terraform-ls
   ];
 }
