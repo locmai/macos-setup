@@ -8,5 +8,8 @@
     trivy
     kitty
     go-task
+    colima
+    k3d
+    protobuf
   ];
 }
