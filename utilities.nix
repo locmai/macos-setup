@@ -11,5 +11,6 @@
     colima
     k3d
     protobuf
+    qmk
   ];
 }
