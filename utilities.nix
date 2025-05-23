@@ -3,6 +3,7 @@
   # $ nix-env -qaP | grep curl
 
   environment.systemPackages = with pkgs; [
+    openssl
     zizmor
     keycastr
     trivy
