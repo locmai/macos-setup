@@ -81,6 +81,7 @@
     ];
   };
 
+  system.primaryUser = "lmai";
   system.defaults = {
     alf = {
       globalstate = 1;
@@ -115,9 +116,8 @@
     };
   };
 
-  services.nix-daemon.enable = true;
-
   nix = {
+    enable = true;
     # configureBuildUsers = true;
     settings = {
       auto-optimise-store = false;
@@ -144,8 +144,7 @@
       silent = true;
     };
   };
-
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog

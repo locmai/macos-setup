@@ -18,7 +18,7 @@
     gotools
 
     # NodeJS
-    nodejs_23
+    nodejs
 
     # Terraform
     tflint

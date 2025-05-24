@@ -13,5 +13,6 @@
     k3d
     protobuf
     qmk
+    gurk-rs
   ];
 }

@@ -14,7 +14,7 @@ default: build
 
 build: /nix /run/current-system/sw/bin/darwin-rebuild 
 	/run/current-system/sw/bin/nix --experimental-features 'nix-command flakes' build ./\#darwinConfigurations.$(shell hostname -s).system
-	./result/sw/bin/darwin-rebuild switch --flake .
+	sudo ./result/sw/bin/darwin-rebuild switch --flake .
 
 update:
 	nix flake update
