@@ -14,5 +14,6 @@
     protobuf
     qmk
     gurk-rs
+    fastfetch
   ];
 }

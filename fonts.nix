@@ -3,12 +3,6 @@
   # $ nix-env -qaP | grep curl
 
   environment.systemPackages = with pkgs; [
-    azure-cli
-    azure-storage-azcopy
-    kind
-    thanos
-    chart-testing
-    kubernetes-helmPlugins.helm-unittest
-    kubectl-view-allocations
+    nerd-fonts.ubuntu-mono
   ];
 }

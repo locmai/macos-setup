@@ -44,6 +44,7 @@
           ./cloud.nix
           ./utilities.nix
           ./configuration.nix
+          ./fonts.nix
           home-manager.darwinModules.home-manager
           ./home/work.nix
         ];
