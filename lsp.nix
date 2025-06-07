@@ -12,6 +12,7 @@
     uv
     python312Packages.python-lsp-server
     python312Packages.pylsp-rope
+    python312Packages.locust
     # Go
     go
     gopls
