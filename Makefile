@@ -12,8 +12,8 @@ default: build
 	/nix/var/nix/profiles/default/bin/nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
 	yes | ./result/bin/darwin-installer
 
-build: /nix /run/current-system/sw/bin/darwin-rebuild 
-	/run/current-system/sw/bin/nix --experimental-features 'nix-command flakes' build ./\#darwinConfigurations.$(shell hostname -s).system
+build: /nix /run/current-system/sw/bin/darwin-rebuild
+	/run/current-system/sw/bin/nix --experimental-features 'nix-command flakes' build ./\#darwinConfigurations.$(shell hostname -s).system --impure
 	sudo ./result/sw/bin/darwin-rebuild switch --flake .
 
 update:
