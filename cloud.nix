@@ -3,12 +3,22 @@
   # $ nix-env -qaP | grep curl
 
   environment.systemPackages = with pkgs; [
+    argocd
     azure-cli
     azure-storage-azcopy
-    kind
-    thanos
     chart-testing
+    kind
+    k9s
+    kubectl
     kubernetes-helmPlugins.helm-unittest
     kubectl-view-allocations
+    kubectl-tree
+    kubectx
+    kubelogin
+    kubernetes-helm
+    kustomize
+    skaffold
+    thanos
+    terraform-docs
   ];
 }

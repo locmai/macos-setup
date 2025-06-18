@@ -7,12 +7,13 @@
     cargo
     rustfmt
     rust-analyzer
+
     # Python
     ruff
     uv
-    python312Packages.python-lsp-server
-    python312Packages.pylsp-rope
+    python312Packages.python-lsp-ruff
     python312Packages.locust
+
     # Go
     go
     gopls
@@ -24,9 +25,12 @@
     # Terraform
     tflint
     hclfmt
+    terraform-ls
+
     # Nix
     nixfmt-classic
     alejandra
+
     # Lua
     stylua
     lua-language-server
@@ -41,6 +45,7 @@
     markdown-oxide
     cmake-language-server
     jsonfmt
-    terraform-ls
+
+    helm-ls
   ];
 }

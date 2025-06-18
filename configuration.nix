@@ -8,8 +8,6 @@
   environment.systemPackages = with pkgs; [
     act
     aria
-    terraform-docs
-    argocd
     curl
     direnv
     docker
@@ -24,18 +22,10 @@
     librsvg
     istioctl
     jq
-    k9s
-    kubectl
-    kubectl-tree
-    kubectx
-    kubelogin
-    kubernetes-helm
-    kustomize
     mosh
     neovim
     nnn
     opentofu
-    presenterm
     rbw
     ripgrep
     sslscan
@@ -49,10 +39,6 @@
     terragrunt
     yq-go
     yamllint
-    chart-testing
-    skaffold
-    rust-analyzer
-    terraform-ls
 
     (pass.withExtensions (ext:
       with ext; [
