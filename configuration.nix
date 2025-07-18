@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ config, pkgs, ... }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep curl
   environment.systemPackages = with pkgs; [
@@ -40,37 +36,25 @@
     yq-go
     yamllint
 
-    (pass.withExtensions (ext:
-      with ext; [
-        pass-otp
-      ]))
+    (pass.withExtensions (ext: with ext; [ pass-otp ]))
   ];
 
   environment.systemPath = [
     config.homebrew.brewPrefix # TODO https://github.com/LnL7/nix-darwin/issues/596
   ];
 
-  environment.variables = {
-    KUBE_EDITOR = "vim";
-  };
+  environment.variables = { KUBE_EDITOR = "vim"; };
 
   # Homebrew packages
   homebrew = {
     enable = true;
-    brews = [
-      "cookiecutter"
-      "pinentry"
-      "llvm"
-      "libpq"
-      "tfenv"
-    ];
+    taps = [ "FelixKratz/formulae" ];
+    brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" "sketchybar" ];
   };
 
   system.primaryUser = "lmai";
   system.defaults = {
-    alf = {
-      globalstate = 1;
-    };
+    alf = { globalstate = 1; };
     dock = {
       autohide = true;
       minimize-to-application = true;
@@ -106,13 +90,8 @@
     # configureBuildUsers = true;
     settings = {
       auto-optimise-store = false;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      allowed-users = [
-        "@admin"
-      ];
+      experimental-features = [ "nix-command" "flakes" ];
+      allowed-users = [ "@admin" ];
     };
   };
 

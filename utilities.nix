@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep curl
 
@@ -15,5 +15,10 @@
     qmk
     gurk-rs
     fastfetch
+    aerospace
+    sketchybar-app-font
+    lua
+    jankyborders
+    discord
   ];
 }
