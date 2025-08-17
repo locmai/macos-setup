@@ -15,10 +15,10 @@
     qmk
     gurk-rs
     fastfetch
-    aerospace
-    sketchybar-app-font
+    # aerospace
+    # sketchybar-app-font
     lua
-    jankyborders
+    # jankyborders
     discord
     cmctl
   ];
