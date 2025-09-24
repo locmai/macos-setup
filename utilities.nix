@@ -21,5 +21,6 @@
     # jankyborders
     discord
     cmctl
+    firefox
   ];
 }
