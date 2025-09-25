@@ -22,7 +22,7 @@
     home-manager,
   }: {
     darwinConfigurations = {
-      "AS-CJKM3P2ND4" = darwin.lib.darwinSystem {
+      "AS-CCW7VHW44G" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./lsp.nix
@@ -31,7 +31,7 @@
           ./configuration.nix
           ./fonts.nix
           home-manager.darwinModules.home-manager
-          ./home/work.nix
+          ./hosts/AS-CCW7VHW44G.nix
         ];
         inputs = {inherit nixpkgs darwin home-manager;};
       };

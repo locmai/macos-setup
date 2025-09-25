@@ -12,9 +12,17 @@ default: build
 	/nix/var/nix/profiles/default/bin/nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
 	yes | ./result/bin/darwin-installer
 
-build: /nix /run/current-system/sw/bin/darwin-rebuild
-	/run/current-system/sw/bin/nix --experimental-features 'nix-command flakes' build ./\#darwinConfigurations.$(shell hostname -s).system --impure
-	sudo ./result/sw/bin/darwin-rebuild switch --flake .
+/opt/homebrew/bin/brew:
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh -o /tmp/brew-install.sh
+	NONINTERACTIVE=1 bash /tmp/brew-install.sh
+
+build: /nix /opt/homebrew/bin/brew
+	sudo /nix/var/nix/profiles/default/bin/nix \
+		 --experimental-features 'nix-command flakes' \
+		run \
+		nix-darwin/nix-darwin-25.05#darwin-rebuild \
+		-- \
+		switch --flake .
 
 update:
 	nix flake update

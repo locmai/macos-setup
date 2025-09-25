@@ -7,20 +7,18 @@
     zizmor
     keycastr
     trivy
-    kitty
     go-task
     colima
     k3d
     protobuf
     qmk
-    gurk-rs
     fastfetch
     # aerospace
     # sketchybar-app-font
     lua
     # jankyborders
-    discord
     cmctl
     firefox
+    brave
   ];
 }
