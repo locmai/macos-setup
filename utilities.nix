@@ -18,7 +18,5 @@
     lua
     # jankyborders
     cmctl
-    firefox
-    brave
   ];
 }
