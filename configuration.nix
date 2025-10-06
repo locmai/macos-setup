@@ -43,14 +43,17 @@
     config.homebrew.brewPrefix # TODO https://github.com/LnL7/nix-darwin/issues/596
   ];
 
-  environment.variables = { KUBE_EDITOR = "vim"; };
+  environment.variables = {
+    KUBE_EDITOR = "nvim";
+    EDITOR = "nvim";
+  };
 
   # Homebrew packages
   homebrew = {
     enable = true;
     taps = [ "FelixKratz/formulae" ];
     brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" ];
-    casks = [ "kitty" ];
+    casks = [ "kitty" "session-manager-plugin" ];
   };
 
   system.primaryUser = "lmai";
