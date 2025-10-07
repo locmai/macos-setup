@@ -18,6 +18,6 @@
     lua
     # jankyborders
     cmctl
-    awscli
+    awscli2
   ];
 }
