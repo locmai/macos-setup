@@ -19,5 +19,6 @@
     # jankyborders
     cmctl
     awscli2
+    dyff
   ];
 }

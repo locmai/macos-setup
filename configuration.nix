@@ -51,7 +51,7 @@
   # Homebrew packages
   homebrew = {
     enable = true;
-    taps = [ "FelixKratz/formulae" ];
+    taps = [ "FelixKratz/formulae" "chainguard-dev/tap" ];
     brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" ];
     casks = [ "kitty" "session-manager-plugin" ];
   };
