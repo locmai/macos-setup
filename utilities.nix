@@ -20,5 +20,6 @@
     cmctl
     awscli2
     dyff
+    kubernetes-helmPlugins.helm-unittest
   ];
 }
