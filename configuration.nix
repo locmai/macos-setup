@@ -16,7 +16,7 @@
     imagemagick
     cairo
     librsvg
-    istioctl
+    # istioctl
     jq
     mosh
     neovim
@@ -52,7 +52,7 @@
   homebrew = {
     enable = true;
     taps = [ "FelixKratz/formulae" "chainguard-dev/tap" ];
-    brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" ];
+    brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" "istioctl" ];
     casks = [ "kitty" "session-manager-plugin" ];
   };
 
