@@ -21,5 +21,8 @@
     awscli2
     dyff
     kubernetes-helmPlugins.helm-unittest
+
+    rustup
+    ingress2gateway
   ];
 }
