@@ -3,7 +3,7 @@
   # $ nix-env -qaP | grep curl
   environment.systemPackages = with pkgs; [
     act
-    aria
+    aria2
     curl
     direnv
     docker
@@ -58,7 +58,6 @@
 
   system.primaryUser = "lmai";
   system.defaults = {
-    alf = { globalstate = 1; };
     dock = {
       autohide = true;
       minimize-to-application = true;
