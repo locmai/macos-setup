@@ -5,6 +5,7 @@
     act
     aria2
     bitwarden-cli
+    claude-code
     curl
     direnv
     docker
