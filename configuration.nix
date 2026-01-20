@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     act
     aria2
+    bitwarden-cli
     curl
     direnv
     docker
@@ -53,7 +54,7 @@
     enable = true;
     taps = [ "FelixKratz/formulae" "chainguard-dev/tap" ];
     brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" "istioctl" ];
-    casks = [ "kitty" "session-manager-plugin" ];
+    casks = [ "kitty" "session-manager-plugin" "cursor" "signal" ];
   };
 
   system.primaryUser = "lmai";

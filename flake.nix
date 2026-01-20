@@ -15,7 +15,7 @@
 
   outputs = { self, nixpkgs, darwin, home-manager, }: {
     darwinConfigurations = {
-      "AS-CCW7VHW44G" = darwin.lib.darwinSystem {
+      "AM-H6MRWRT99L" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./lsp.nix
@@ -24,7 +24,7 @@
           ./configuration.nix
           ./fonts.nix
           home-manager.darwinModules.home-manager
-          ./hosts/AS-CCW7VHW44G.nix
+          ./hosts/AM-H6MRWRT99L.nix
         ];
         inputs = { inherit nixpkgs darwin home-manager; };
       };
