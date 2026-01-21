@@ -4,6 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     openssl
+    opencode
     zizmor
     keycastr
     trivy
