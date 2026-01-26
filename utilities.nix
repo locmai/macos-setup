@@ -1,10 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep curl
 
   environment.systemPackages = with pkgs; [
     openssl
-    opencode
+    pkgs-unstable.opencode
     zizmor
     keycastr
     trivy
@@ -27,7 +27,7 @@
     ingress2gateway
 
     # MCP servers
-    playwright-mcp
+    pkgs-unstable.playwright-mcp
     mcp-k8s-go
   ];
 }
