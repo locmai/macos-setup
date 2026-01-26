@@ -25,5 +25,9 @@
 
     rustup
     ingress2gateway
+
+    # MCP servers
+    playwright-mcp
+    mcp-k8s-go
   ];
 }
