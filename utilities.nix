@@ -25,6 +25,7 @@
 
     rustup
     ingress2gateway
+    ghostty-bin
 
     # MCP servers
     pkgs-unstable.playwright-mcp
