@@ -3,6 +3,8 @@
   # $ nix-env -qaP | grep curl
 
   environment.systemPackages = with pkgs; [
+    claude-code
+
     openssl
     pkgs-unstable.opencode
     zizmor
