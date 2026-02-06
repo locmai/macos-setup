@@ -6,6 +6,7 @@
     aria2
     bitwarden-cli
     claude-code
+    claude-monitor
     curl
     direnv
     docker
