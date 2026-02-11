@@ -1,6 +1,4 @@
 { config, pkgs, ... }: {
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep curl
   environment.systemPackages = with pkgs; [
     act
     aria2
@@ -15,11 +13,9 @@
     gh
     git
     gnupg
-    go
     imagemagick
     cairo
     librsvg
-    # istioctl
     jq
     mosh
     neovim
@@ -29,7 +25,6 @@
     ripgrep
     sslscan
     step-cli
-    tflint
     tree
     unzip
     watch
@@ -38,12 +33,11 @@
     terragrunt
     yq-go
     yamllint
-
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
   ];
 
   environment.systemPath = [
-    config.homebrew.brewPrefix # TODO https://github.com/LnL7/nix-darwin/issues/596
+    config.homebrew.brewPrefix
   ];
 
   environment.variables = {
@@ -51,7 +45,6 @@
     EDITOR = "nvim";
   };
 
-  # Homebrew packages
   homebrew = {
     enable = true;
     taps = [ "FelixKratz/formulae" "chainguard-dev/tap" ];
@@ -93,7 +86,6 @@
 
   nix = {
     enable = true;
-    # configureBuildUsers = true;
     settings = {
       auto-optimise-store = false;
       experimental-features = [ "nix-command" "flakes" ];
@@ -101,7 +93,6 @@
     };
   };
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
   programs = {
     zsh = {
       enable = true;
@@ -114,11 +105,8 @@
       silent = true;
     };
   };
+
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
   system.stateVersion = 6;
-
   nixpkgs.config.allowUnfree = true;
 }

@@ -1,12 +1,10 @@
-{pkgs, ...}: {
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep curl
-
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     # Rust
     cargo
     rustfmt
     rust-analyzer
+    rustup
 
     # Python
     ruff
@@ -30,6 +28,7 @@
     # Nix
     nixfmt-classic
     alejandra
+    nixd
 
     # Lua
     stylua
@@ -38,14 +37,9 @@
     # .NET
     dotnet-sdk
 
-    # Nix
-    nixd
-
-    # who knows
+    # Other
     markdown-oxide
     cmake-language-server
     jsonfmt
-
-    helm-ls
   ];
 }
