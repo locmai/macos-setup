@@ -33,5 +33,6 @@
     pkgs-unstable.opencode
     pkgs-unstable.playwright-mcp
     mcp-k8s-go
+    mcp-grafana
   ];
 }
