@@ -90,6 +90,22 @@
       auto-optimise-store = false;
       experimental-features = [ "nix-command" "flakes" ];
       allowed-users = [ "@admin" ];
+      trusted-users = [ "@admin" ];
+    };
+    optimise = {
+      automatic = true;
+    };
+    linux-builder = {
+      enable = true;
+      config = {
+        virtualisation = {
+          cores = 8;
+          darwin-builder = {
+            diskSize = 128 * 1024;
+            memorySize = 16 * 1024;
+          };
+        };
+      };
     };
   };
 
