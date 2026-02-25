@@ -23,11 +23,21 @@ Inputs (all pinned to 25.11):
 
 ### Module Organization
 
-- **configuration.nix**: Core system packages, Homebrew, macOS defaults, environment variables, programs (zsh, direnv)
-- **lsp.nix**: Language servers and dev tooling (Rust, Python, Go, NodeJS, Terraform, Nix, Lua, .NET)
-- **cloud.nix**: Kubernetes and cloud tools (kubectl, helm, argocd, Azure CLI, k9s, kind)
-- **utilities.nix**: General utilities, MCP servers, uses `pkgs-unstable` for bleeding-edge packages
-- **fonts.nix**: Font packages
+```
+modules/
+├── darwin.nix              # Core system config
+└── packages/
+    ├── cloud.nix          # Kubernetes and cloud tools
+    ├── fonts.nix          # Font packages
+    ├── lsp.nix            # Language servers and dev tooling
+    └── utilities.nix      # General utilities and MCP servers
+```
+
+- **modules/darwin.nix**: Core system packages, Homebrew, macOS defaults, environment variables, programs (zsh, direnv)
+- **modules/packages/lsp.nix**: Language servers and dev tooling (Rust, Python, Go, NodeJS, Terraform, Nix, Lua, .NET)
+- **modules/packages/cloud.nix**: Kubernetes and cloud tools (kubectl, helm, argocd, Azure CLI, k9s, kind)
+- **modules/packages/utilities.nix**: General utilities, MCP servers, uses `pkgs-unstable` for bleeding-edge packages
+- **modules/packages/fonts.nix**: Font packages
 
 ### Package Management Layers
 
@@ -73,9 +83,9 @@ Add a new entry in `flake.nix`:
 
 ## Adding Packages
 
-1. Choose the appropriate module based on category
+1. Choose the appropriate module in `modules/packages/` based on category
 2. Prefer Nix packages over Homebrew
-3. Use `pkgs-unstable` for bleeding-edge versions (only in utilities.nix)
+3. Use `pkgs-unstable` for bleeding-edge versions (only in `modules/packages/utilities.nix`)
 4. Run `darwin-rebuild switch --flake .` to apply
 
 ## Important Notes

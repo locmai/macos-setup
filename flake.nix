@@ -26,11 +26,11 @@
         inherit system;
         specialArgs = { inherit pkgs-unstable; };
         modules = [
-          ./configuration.nix
-          ./lsp.nix
-          ./cloud.nix
-          ./utilities.nix
-          ./fonts.nix
+          ./modules/darwin.nix
+          ./modules/packages/lsp.nix
+          ./modules/packages/cloud.nix
+          ./modules/packages/utilities.nix
+          ./modules/packages/fonts.nix
           home-manager.darwinModules.home-manager
           hostModule
         ];
@@ -43,6 +43,9 @@
           useUserPackages = true;
           useGlobalPkgs = true;
           users.${username} = {
+            imports = [
+              ./modules/home/claude.nix
+            ];
             home.stateVersion = "22.11";
             programs.home-manager.enable = true;
             home.packages = with pkgs; [ sops ] ++ extraPackages;
