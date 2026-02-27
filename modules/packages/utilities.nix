@@ -33,5 +33,8 @@
     pkgs-unstable.opencode
     pkgs-unstable.playwright-mcp
     mcp-grafana
+
+    google-chrome
+    unnaturalscrollwheels
   ];
 }
