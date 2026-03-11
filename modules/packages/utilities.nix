@@ -26,9 +26,6 @@
     lua
     qmk
 
-    # Terminal
-    ghostty-bin
-
     # MCP servers
     pkgs-unstable.opencode
     pkgs-unstable.playwright-mcp
