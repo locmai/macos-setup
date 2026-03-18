@@ -6,7 +6,6 @@
     zizmor
 
     # Containers
-    colima
     k3d
 
     # Build tools
@@ -33,5 +32,6 @@
 
     google-chrome
     unnaturalscrollwheels
+    pinentry_mac
   ];
 }
