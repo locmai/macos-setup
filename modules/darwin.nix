@@ -43,6 +43,7 @@
   environment.variables = {
     KUBE_EDITOR = "nvim";
     EDITOR = "nvim";
+    CGO_ENABLED = "1";
   };
 
   homebrew = {

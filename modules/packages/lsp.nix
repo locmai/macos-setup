@@ -16,6 +16,8 @@
     go
     gopls
     gotools
+    clang
+    llvmPackages.bintools
 
     # NodeJS
     nodejs
