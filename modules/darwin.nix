@@ -6,7 +6,6 @@
     claude-code
     claude-monitor
     curl
-    direnv
     docker
     fd
     fzf
@@ -120,6 +119,12 @@
     direnv = {
       enable = true;
       silent = true;
+      package = pkgs.direnv.overrideAttrs (oldAttrs: {
+        postPatch = ''
+          substituteInPlace GNUmakefile \
+            --replace-fail '-linkmode=external' ""
+        '';
+      });
     };
   };
 
