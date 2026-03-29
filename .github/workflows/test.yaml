@@ -1,0 +1,41 @@
+name: Test
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  darwin-rebuild:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        run: make /nix
+
+      - name: Install Homebrew
+        run: make /opt/homebrew/bin/brew
+
+      - name: Backup shell configs
+        run: |
+          sudo mv /etc/bashrc /etc/bashrc.before-nix-darwin 2>/dev/null || true
+          sudo mv /etc/zshrc /etc/zshrc.before-nix-darwin 2>/dev/null || true
+
+      - name: Run darwin-rebuild
+        run: |
+          sudo /nix/var/nix/profiles/default/bin/nix \
+            --experimental-features 'nix-command flakes' \
+            run \
+            'git+https://github.com/nix-darwin/nix-darwin.git?ref=nix-darwin-25.11#darwin-rebuild' \
+            -- \
+            switch --flake .#test
+
+      - name: Verify installation
+        run: |
+          darwin-rebuild --version
+          nix --version

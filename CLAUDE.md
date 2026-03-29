@@ -41,11 +41,20 @@ modules/
 
 ### Package Management Layers
 
-1. **Nix packages** (`environment.systemPackages`): Preferred for most tools
-2. **Homebrew brews**: Tools with poor Nix support (llvm, libpq, tfenv, istioctl)
-3. **Homebrew casks**: GUI applications (kitty, cursor, signal)
+**IMPORTANT: Always prefer Nix packages over Homebrew unless there's a specific reason not to.**
 
-For unstable packages, use `pkgs-unstable.<package>` in modules that accept it.
+1. **Nix packages** (`environment.systemPackages`): **DEFAULT CHOICE** for all tools and applications
+   - Check nixpkgs first: `nix-env -qaP | grep <package-name>`
+   - Use `pkgs-unstable.<package>` for bleeding-edge versions (in utilities.nix)
+   - Even GUI applications should be installed via Nix when available
+
+2. **Homebrew brews**: Only for tools with poor/broken Nix support
+   - Current exceptions: llvm, libpq, tfenv, istioctl
+   - Require explicit justification before adding new brews
+
+3. **Homebrew casks**: Only as last resort for GUI apps not in nixpkgs
+   - Current exceptions: kitty, cursor, signal, session-manager-plugin
+   - Always check nixpkgs availability first
 
 ## Commands
 
@@ -83,10 +92,23 @@ Add a new entry in `flake.nix`:
 
 ## Adding Packages
 
-1. Choose the appropriate module in `modules/packages/` based on category
-2. Prefer Nix packages over Homebrew
-3. Use `pkgs-unstable` for bleeding-edge versions (only in `modules/packages/utilities.nix`)
-4. Run `darwin-rebuild switch --flake .` to apply
+**Follow this process strictly:**
+
+1. **Search nixpkgs first**: Run `nix-env -qaP | grep <package-name>` or check https://search.nixos.org
+2. **Add to appropriate Nix module** in `modules/packages/` based on category:
+   - `lsp.nix`: Language servers and development tools
+   - `cloud.nix`: Kubernetes and cloud infrastructure tools
+   - `utilities.nix`: General utilities, MCP servers (supports `pkgs-unstable`)
+   - `fonts.nix`: Font packages
+   - `darwin.nix`: Core system packages only
+3. **Use `pkgs-unstable.<package>`** for bleeding-edge versions (only in `utilities.nix`)
+4. **Only use Homebrew if**:
+   - Package doesn't exist in nixpkgs
+   - Nix version is broken or unmaintained
+   - Specific technical reason requires Homebrew (document why)
+5. **Apply changes**: `darwin-rebuild switch --flake .`
+
+**DO NOT default to Homebrew. Always try Nix first.**
 
 ## Important Notes
 

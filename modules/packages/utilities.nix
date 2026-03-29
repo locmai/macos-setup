@@ -19,8 +19,10 @@
     ingress2gateway
 
     # Utilities
+    aerospace
     fastfetch
     dyff
+    ffmpeg
     keycastr
     lua
     qmk

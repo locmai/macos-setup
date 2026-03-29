@@ -71,6 +71,15 @@
             extraCasks = [ "aws-vpn-client" "brave-browser" ];
           };
         };
+
+        # Test configuration for CI
+        "test" = mkDarwinConfig {
+          hostname = "test";
+          hostModule = mkHostModule {
+            username = "runner";
+            extraCasks = [];
+          };
+        };
       };
     };
 }
