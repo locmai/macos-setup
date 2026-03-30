@@ -1,5 +1,5 @@
 .POSIX:
-.PHONY: default build update
+.PHONY: default build update up
 
 default: build
 
@@ -26,6 +26,9 @@ build: /nix /opt/homebrew/bin/brew
 
 update:
 	nix flake update
+
+up:
+	bun tools/update.ts
 
 dotfiles:
 	cd ~ \

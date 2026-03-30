@@ -26,6 +26,7 @@
     keycastr
     lua
     qmk
+    sketchybar
 
     # MCP servers
     pkgs-unstable.opencode
