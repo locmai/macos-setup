@@ -4,18 +4,28 @@
   home.file = {
     # Claude Code configuration files
     ".claude/CLAUDE.md" = {
+      force = true;
       source = config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/Workspaces/agent-setup/.claude/CLAUDE.md";
     };
 
     ".claude/settings.json" = {
+      force = true;
       source = config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/Workspaces/agent-setup/.claude/settings.json";
     };
 
     ".claude/settings.local.json" = {
+      force = true;
       source = config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/Workspaces/agent-setup/.claude/settings.local.json";
+    };
+
+    # MCP configuration
+    ".mcp.json" = {
+      force = true;
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/Workspaces/agent-setup/.mcp.json";
     };
 
     # Agent definitions

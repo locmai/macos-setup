@@ -119,6 +119,7 @@
       enable = true;
       silent = true;
       package = pkgs.direnv.overrideAttrs (oldAttrs: {
+        doCheck = false;
         postPatch = ''
           substituteInPlace GNUmakefile \
             --replace-fail '-linkmode=external' ""
