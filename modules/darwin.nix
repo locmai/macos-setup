@@ -48,7 +48,7 @@
     enable = true;
     taps = [ "FelixKratz/formulae" "chainguard-dev/tap" ];
     brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" "istioctl" ];
-    casks = [ "kitty" "session-manager-plugin" "cursor" "signal" ];
+    casks = [ "kitty" "session-manager-plugin" "cursor" "signal" "logseq" ];
   };
 
   system.primaryUser = "lmai";
