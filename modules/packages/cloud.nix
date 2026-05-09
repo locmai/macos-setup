@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
+{ pkgs, pkgs-unstable, ... }: {
+  environment.systemPackages = (with pkgs; [
     # Kubernetes
     kubectl
     kubectx
@@ -27,5 +27,8 @@
     # IaC
     terraform-docs
     chart-testing
+  ]) ++ [
+    # Service mesh (unstable channel)
+    pkgs-unstable.istioctl
   ];
 }

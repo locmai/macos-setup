@@ -76,7 +76,7 @@ Always prefer Nix over Homebrew.
    - `utilities.nix` for general utilities and MCP servers (supports `pkgs-unstable.<package>`)
    - `fonts.nix` for fonts
    - `darwin.nix` only for core system packages
-3. Fall back to a Homebrew brew or cask only when the package is missing or broken in nixpkgs, and document the reason. Current exceptions: `llvm`, `libpq`, `tfenv`, `istioctl` (brews); `kitty`, `cursor`, `signal`, `session-manager-plugin` (casks).
+3. Fall back to a Homebrew brew or cask only when the package is missing or broken in nixpkgs, and document the reason. Current exceptions: `llvm`, `libpq`, `tfenv` (brews); `kitty`, `cursor`, `signal`, `session-manager-plugin` (casks).
 4. Apply: `darwin-rebuild switch --flake .`
 
 ## Notes

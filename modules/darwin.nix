@@ -47,7 +47,7 @@
   homebrew = {
     enable = true;
     taps = [ "FelixKratz/formulae" "chainguard-dev/tap" ];
-    brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" "istioctl" ];
+    brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" ];
     casks = [ "kitty" "session-manager-plugin" "cursor" "signal" "logseq" ];
   };
 

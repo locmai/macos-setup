@@ -19,6 +19,7 @@
     ingress2gateway
 
     # Utilities
+    starship
     aerospace
     fastfetch
     dyff

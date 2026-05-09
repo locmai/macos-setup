@@ -49,7 +49,7 @@ modules/
    - Even GUI applications should be installed via Nix when available
 
 2. **Homebrew brews**: Only for tools with poor/broken Nix support
-   - Current exceptions: llvm, libpq, tfenv, istioctl
+   - Current exceptions: llvm, libpq, tfenv
    - Require explicit justification before adding new brews
 
 3. **Homebrew casks**: Only as last resort for GUI apps not in nixpkgs
