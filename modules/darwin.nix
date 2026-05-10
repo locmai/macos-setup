@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, username, ... }: {
   environment.systemPackages = with pkgs; [
     act
     aria2
@@ -34,9 +34,7 @@
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
   ];
 
-  environment.systemPath = [
-    config.homebrew.brewPrefix
-  ];
+  environment.systemPath = [ config.homebrew.brewPrefix ];
 
   environment.variables = {
     KUBE_EDITOR = "nvim";
@@ -51,7 +49,7 @@
     casks = [ "kitty" "session-manager-plugin" "cursor" "signal" "logseq" ];
   };
 
-  system.primaryUser = "lmai";
+  system.primaryUser = username;
   system.defaults = {
     dock = {
       autohide = true;
@@ -91,9 +89,7 @@
       allowed-users = [ "@admin" ];
       trusted-users = [ "@admin" ];
     };
-    optimise = {
-      automatic = true;
-    };
+    optimise = { automatic = true; };
     linux-builder = {
       enable = true;
       config = {

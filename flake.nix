@@ -22,9 +22,9 @@
         config.allowUnfree = true;
       };
 
-      mkDarwinConfig = { hostname, hostModule }: darwin.lib.darwinSystem {
+      mkDarwinConfig = { hostname, username, hostModule }: darwin.lib.darwinSystem {
         inherit system;
-        specialArgs = { inherit pkgs-unstable; };
+        specialArgs = { inherit pkgs-unstable username; };
         modules = [
           ./modules/darwin.nix
           ./modules/packages/lsp.nix
@@ -63,6 +63,7 @@
       darwinConfigurations = {
         "AM-H6MRWRT99L" = mkDarwinConfig {
           hostname = "AM-H6MRWRT99L";
+          username = "lmai";
           hostModule = mkHostModule {
             username = "lmai";
             extraCasks = [ "aws-vpn-client" "brave-browser" ];
@@ -71,6 +72,7 @@
 
         "AS-CCW7VHW44G" = mkDarwinConfig {
           hostname = "AS-CCW7VHW44G";
+          username = "lmai";
           hostModule = mkHostModule {
             username = "lmai";
             extraCasks = [ "aws-vpn-client" "brave-browser" ];
@@ -80,6 +82,7 @@
         # Test configuration for CI
         "test" = mkDarwinConfig {
           hostname = "test";
+          username = "runner";
           hostModule = mkHostModule {
             username = "runner";
             extraCasks = [];
