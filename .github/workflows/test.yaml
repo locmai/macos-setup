@@ -37,5 +37,5 @@ jobs:
 
       - name: Verify installation
         run: |
-          darwin-rebuild --version
-          nix --version
+          /run/current-system/sw/bin/darwin-rebuild --version
+          /nix/var/nix/profiles/default/bin/nix --version
