@@ -29,6 +29,11 @@
           ./modules/darwin.nix
           ./modules/packages/lsp.nix
           ./modules/packages/cloud.nix
+          ./modules/packages/build.nix
+          ./modules/packages/containers.nix
+          ./modules/packages/security.nix
+          ./modules/packages/mcp.nix
+          ./modules/packages/desktop.nix
           ./modules/packages/utilities.nix
           ./modules/packages/fonts.nix
           home-manager.darwinModules.home-manager

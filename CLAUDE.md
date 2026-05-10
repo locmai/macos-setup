@@ -27,16 +27,26 @@ Inputs (all pinned to 25.11):
 modules/
 ├── darwin.nix              # Core system config
 └── packages/
-    ├── cloud.nix          # Kubernetes and cloud tools
+    ├── build.nix          # Build tools (protobuf, cmake, go-task)
+    ├── cloud.nix          # Kubernetes, cloud providers, IaC
+    ├── containers.nix     # Local container runtimes (k3d)
+    ├── desktop.nix        # Window manager, bar, GUI utilities, browsers
     ├── fonts.nix          # Font packages
     ├── lsp.nix            # Language servers and dev tooling
-    └── utilities.nix      # General utilities and MCP servers
+    ├── mcp.nix            # MCP servers (uses `pkgs-unstable`)
+    ├── security.nix       # Security tooling (openssl, trivy, zizmor)
+    └── utilities.nix      # General CLI utilities (starship, ffmpeg, etc.)
 ```
 
 - **modules/darwin.nix**: Core system packages, Homebrew, macOS defaults, environment variables, programs (zsh, direnv)
 - **modules/packages/lsp.nix**: Language servers and dev tooling (Rust, Python, Go, NodeJS, Terraform, Nix, Lua, .NET)
-- **modules/packages/cloud.nix**: Kubernetes and cloud tools (kubectl, helm, argocd, Azure CLI, k9s, kind)
-- **modules/packages/utilities.nix**: General utilities, MCP servers, uses `pkgs-unstable` for bleeding-edge packages
+- **modules/packages/cloud.nix**: Kubernetes, cloud providers (AWS, Azure), cert/gateway tooling, IaC, service mesh
+- **modules/packages/build.nix**: Build tools (protobuf, cmake, go-task)
+- **modules/packages/containers.nix**: Local container runtimes (k3d)
+- **modules/packages/security.nix**: Security tooling (openssl, trivy, zizmor)
+- **modules/packages/mcp.nix**: MCP servers, uses `pkgs-unstable` for bleeding-edge packages
+- **modules/packages/desktop.nix**: Window manager, bar, GUI utilities, browsers, pinentry
+- **modules/packages/utilities.nix**: General CLI utilities (starship, fastfetch, dyff, ffmpeg, lua, qmk)
 - **modules/packages/fonts.nix**: Font packages
 
 ### Package Management Layers
@@ -97,11 +107,16 @@ Add a new entry in `flake.nix`:
 1. **Search nixpkgs first**: Run `nix-env -qaP | grep <package-name>` or check https://search.nixos.org
 2. **Add to appropriate Nix module** in `modules/packages/` based on category:
    - `lsp.nix`: Language servers and development tools
-   - `cloud.nix`: Kubernetes and cloud infrastructure tools
-   - `utilities.nix`: General utilities, MCP servers (supports `pkgs-unstable`)
+   - `cloud.nix`: Kubernetes, cloud providers, cert/gateway, IaC, service mesh
+   - `build.nix`: Build tools (protobuf, cmake, go-task)
+   - `containers.nix`: Local container runtimes (k3d)
+   - `security.nix`: Security tooling (openssl, trivy, zizmor)
+   - `mcp.nix`: MCP servers (supports `pkgs-unstable`)
+   - `desktop.nix`: Window manager, bar, GUI utilities, browsers, pinentry
+   - `utilities.nix`: General CLI utilities (shell prompt, media, scripting)
    - `fonts.nix`: Font packages
    - `darwin.nix`: Core system packages only
-3. **Use `pkgs-unstable.<package>`** for bleeding-edge versions (only in `utilities.nix`)
+3. **Use `pkgs-unstable.<package>`** for bleeding-edge versions (available in `mcp.nix` and `cloud.nix`)
 4. **Only use Homebrew if**:
    - Package doesn't exist in nixpkgs
    - Nix version is broken or unmaintained

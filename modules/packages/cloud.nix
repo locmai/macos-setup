@@ -17,9 +17,16 @@
     argocd
 
     # Cloud providers
+    awscli2
     azure-cli
     azure-storage-azcopy
     kubelogin
+
+    # Cert management
+    cmctl
+
+    # Gateway / networking
+    ingress2gateway
 
     # Observability
     thanos
