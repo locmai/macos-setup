@@ -20,7 +20,7 @@
     llvmPackages.bintools
 
     # NodeJS
-    nodejs
+    nodejs_24
 
     # Terraform
     tflint

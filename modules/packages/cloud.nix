@@ -34,6 +34,7 @@
     # IaC
     terraform-docs
     chart-testing
+    granted
   ]) ++ [
     # Service mesh (unstable channel)
     pkgs-unstable.istioctl

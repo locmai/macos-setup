@@ -34,7 +34,7 @@
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
   ];
 
-  environment.systemPath = [ config.homebrew.brewPrefix ];
+  environment.systemPath = [ "${config.homebrew.prefix}/bin" ];
 
   environment.variables = {
     KUBE_EDITOR = "nvim";
