@@ -1,11 +1,11 @@
 { config, pkgs, username, ... }: {
   environment.systemPackages = with pkgs; [
+    pnpm
     act
     aria2
     bitwarden-cli
     claude-monitor
     curl
-    docker
     fd
     fzf
     gh
