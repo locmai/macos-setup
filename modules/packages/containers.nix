@@ -1,5 +1,1 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    k3d
-  ];
-}
+{ pkgs, ... }: { environment.systemPackages = with pkgs; [ k3d ]; }

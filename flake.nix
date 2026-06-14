@@ -22,45 +22,44 @@
         config.allowUnfree = true;
       };
 
-      mkDarwinConfig = { hostname, username, hostModule }: darwin.lib.darwinSystem {
-        inherit system;
-        specialArgs = { inherit pkgs-unstable username; };
-        modules = [
-          ./modules/darwin.nix
-          ./modules/packages/lsp.nix
-          ./modules/packages/cloud.nix
-          ./modules/packages/build.nix
-          ./modules/packages/containers.nix
-          ./modules/packages/security.nix
-          ./modules/packages/mcp.nix
-          ./modules/packages/desktop.nix
-          ./modules/packages/utilities.nix
-          ./modules/packages/fonts.nix
-          home-manager.darwinModules.home-manager
-          hostModule
-        ];
-      };
+      mkDarwinConfig = { hostname, username, hostModule }:
+        darwin.lib.darwinSystem {
+          inherit system;
+          specialArgs = { inherit pkgs-unstable username; };
+          modules = [
+            ./modules/darwin.nix
+            ./modules/packages/lsp.nix
+            ./modules/packages/cloud.nix
+            ./modules/packages/build.nix
+            ./modules/packages/containers.nix
+            ./modules/packages/security.nix
+            ./modules/packages/mcp.nix
+            ./modules/packages/desktop.nix
+            ./modules/packages/utilities.nix
+            ./modules/packages/fonts.nix
+            home-manager.darwinModules.home-manager
+            hostModule
+          ];
+        };
 
-      mkHostModule = { username, extraCasks ? [], extraPackages ? [] }: { pkgs, ... }: {
-        users.users.${username}.home = "/Users/${username}";
-        homebrew.casks = extraCasks;
-        home-manager = {
-          useUserPackages = true;
-          useGlobalPkgs = true;
-          users.${username} = {
-            imports = [
-              ./modules/home/claude.nix
-              ./modules/home/opencode.nix
-            ];
-            home.stateVersion = "22.11";
-            programs.home-manager.enable = true;
-            home.packages = with pkgs; [ sops ] ++ extraPackages;
-            home.enableNixpkgsReleaseCheck = false;
+      mkHostModule = { username, extraCasks ? [ ], extraPackages ? [ ] }:
+        { pkgs, ... }: {
+          users.users.${username}.home = "/Users/${username}";
+          homebrew.casks = extraCasks;
+          home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
+            users.${username} = {
+              imports =
+                [ ./modules/home/claude.nix ./modules/home/opencode.nix ];
+              home.stateVersion = "22.11";
+              programs.home-manager.enable = true;
+              home.packages = with pkgs; [ sops ] ++ extraPackages;
+              home.enableNixpkgsReleaseCheck = false;
+            };
           };
         };
-      };
-    in
-    {
+    in {
       darwinConfigurations = {
         "AM-H6MRWRT99L" = mkDarwinConfig {
           hostname = "AM-H6MRWRT99L";
@@ -86,7 +85,7 @@
           username = "runner";
           hostModule = mkHostModule {
             username = "runner";
-            extraCasks = [];
+            extraCasks = [ ];
           };
         };
       };

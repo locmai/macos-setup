@@ -1,5 +1,3 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    nerd-fonts.ubuntu-mono
-  ];
+  environment.systemPackages = with pkgs; [ nerd-fonts.ubuntu-mono ];
 }
