@@ -28,7 +28,7 @@
     terraform-ls
 
     # Nix
-    nixfmt-classic
+    nixfmt
     alejandra
     nixd
 
