@@ -1,9 +1,5 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # Shell / prompt
-    starship
-    fastfetch
-
     # Diff and data
     dyff
 
@@ -13,5 +9,8 @@
     # Scripting and hardware
     lua
     qmk
+
+    # AI hype train
+    pi-coding-agent
   ];
 }

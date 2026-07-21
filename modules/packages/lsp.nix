@@ -43,5 +43,6 @@
     markdown-oxide
     cmake-language-server
     jsonfmt
+    lua51Packages.tree-sitter-cli
   ];
 }

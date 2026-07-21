@@ -1,10 +1,15 @@
-{ config, pkgs, username, ... }: {
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   environment.systemPackages = with pkgs; [
     pnpm
     act
     aria2
     bitwarden-cli
-    claude-monitor
     curl
     fd
     fzf
@@ -44,9 +49,25 @@
 
   homebrew = {
     enable = true;
-    taps = [ "FelixKratz/formulae" "chainguard-dev/tap" ];
-    brews = [ "cookiecutter" "pinentry" "llvm" "libpq" "tfenv" "nvm" ];
-    casks = [ "kitty" "session-manager-plugin" "cursor" "signal" "logseq" ];
+    taps = [
+      "FelixKratz/formulae"
+      "chainguard-dev/tap"
+    ];
+    brews = [
+      "cookiecutter"
+      "pinentry"
+      "llvm"
+      "libpq"
+      "tfenv"
+      "nvm"
+    ];
+    casks = [
+      "kitty"
+      "session-manager-plugin"
+      "cursor"
+      "signal"
+      "logseq"
+    ];
   };
 
   system.primaryUser = username;
@@ -85,11 +106,16 @@
     enable = true;
     settings = {
       auto-optimise-store = false;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       allowed-users = [ "@admin" ];
       trusted-users = [ "@admin" ];
     };
-    optimise = { automatic = true; };
+    optimise = {
+      automatic = true;
+    };
     linux-builder = {
       enable = true;
       config = {
