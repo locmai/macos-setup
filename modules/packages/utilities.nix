@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
+{ pkgs, pkgs-unstable, ... }: {
+  environment.systemPackages = (with pkgs; [
     # Diff and data
     dyff
 
@@ -11,7 +11,6 @@
     qmk
 
     # AI hype train
-    pi-coding-agent
     starship
-  ];
+  ]) ++ [ pkgs-unstable.pi-coding-agent ];
 }
