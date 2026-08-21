@@ -87,6 +87,7 @@
       NSAutomaticPeriodSubstitutionEnabled = false;
       NSAutomaticQuoteSubstitutionEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
+      _HIHideMenuBar = true;
     };
     CustomUserPreferences = {
       "com.apple.Safari" = {

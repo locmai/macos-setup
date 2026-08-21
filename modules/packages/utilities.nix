@@ -12,5 +12,6 @@
 
     # AI hype train
     pi-coding-agent
+    starship
   ];
 }
