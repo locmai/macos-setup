@@ -50,8 +50,7 @@
             useUserPackages = true;
             useGlobalPkgs = true;
             users.${username} = {
-              imports =
-                [ ./modules/home/claude.nix ./modules/home/opencode.nix ];
+              imports = [ ./modules/home/claude.nix ./modules/home/pi.nix ];
               home.stateVersion = "22.11";
               programs.home-manager.enable = true;
               home.packages = with pkgs; [ sops ] ++ extraPackages;

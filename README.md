@@ -34,16 +34,23 @@ darwin-rebuild switch --flake .
 flake.nix                    # hosts, inputs, helper functions
 modules/
   darwin.nix                 # core system config, Homebrew, macOS defaults, zsh, direnv
-  home/claude.nix            # home-manager config for Claude tooling
+  home/
+    claude.nix               # home-manager config for Claude Code tooling
+    pi.nix                   # symlinks ~/.pi/agent/AGENTS.md to the shared CLAUDE.md
   packages/
+    build.nix                # build tools (protobuf, cmake, go-task)
     cloud.nix                # kubectl, helm, argocd, Azure CLI, k9s, kind
+    containers.nix           # local container runtimes (k3d)
+    desktop.nix              # window manager, bar, GUI utilities, browsers
     fonts.nix                # font packages
     lsp.nix                  # language servers and dev tooling
-    utilities.nix            # general CLI tools and MCP servers (uses pkgs-unstable)
+    mcp.nix                  # MCP servers (uses pkgs-unstable)
+    security.nix             # security tooling (openssl, trivy, zizmor)
+    utilities.nix            # general CLI tools
 tools/update.ts              # version bump helper
 ```
 
-Inputs are pinned to the 25.11 release channels for `nixpkgs`, `nix-darwin`, and `home-manager`, with `nixpkgs-unstable` available for bleeding-edge packages in `utilities.nix`.
+Inputs are pinned to the 26.05 release channels for `nixpkgs`, `nix-darwin`, and `home-manager`, with `nixpkgs-unstable` available for bleeding-edge packages in `mcp.nix` and `cloud.nix`.
 
 ## Hosts
 
@@ -73,7 +80,11 @@ Always prefer Nix over Homebrew.
 2. Add it to the matching module under `modules/packages/`:
    - `lsp.nix` for language servers and dev tooling
    - `cloud.nix` for Kubernetes and cloud infra tools
-   - `utilities.nix` for general utilities and MCP servers (supports `pkgs-unstable.<package>`)
+   - `build.nix` for build tools, `containers.nix` for container runtimes
+   - `security.nix` for security tooling
+   - `mcp.nix` for MCP servers (supports `pkgs-unstable.<package>`)
+   - `desktop.nix` for window manager, bar, GUI apps
+   - `utilities.nix` for general CLI utilities
    - `fonts.nix` for fonts
    - `darwin.nix` only for core system packages
 3. Fall back to a Homebrew brew or cask only when the package is missing or broken in nixpkgs, and document the reason. Current exceptions: `llvm`, `libpq`, `tfenv` (brews); `kitty`, `cursor`, `signal`, `session-manager-plugin` (casks).
