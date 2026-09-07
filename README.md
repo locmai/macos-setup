@@ -1,4 +1,6 @@
-# nix nix nix
+# nix nix nix (archived)
+
+> This repository is archived. Development has moved to [locmai/dotfiles](https://github.com/locmai/dotfiles).
 
 ![nix nix nix](./nix.jpeg)
 
